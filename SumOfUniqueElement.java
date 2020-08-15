@@ -16,38 +16,38 @@ public class SumOfUniqueElement {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] arrA = { 1, 6, 4, 3, 2, 2, 3, 8, 1 };
+		int[] input = { 1, 6, 4, 3, 2, 2, 3, 8, 1 };
 
-		sumOfDistinct_Sorting(arrA);
+		sumOfDistinct_Sorting(input);
 
-		sumOfDistinct_HashSet(arrA);
+		sumOfDistinct_HashSet(input);
 	}
 
-	public static void sumOfDistinct_Sorting(int[] arrA) {
+	public static void sumOfDistinct_Sorting(int[] input) {
 
 		// sort the given array
-		Arrays.sort(arrA);
+		Arrays.sort(input);
 
-		int current = arrA[0];
-		int sum = arrA[0];
-		for (int i = 1; i < arrA.length; i++) {
-			if (current != arrA[i]) {
-				sum += arrA[i];
-				current = arrA[i];
+		int current = input[0];
+		int sum = input[0];
+		for (int i = 1; i < input.length; i++) {
+			if (current != input[i]) {
+				sum += input[i];
+				current = input[i];
 			}
 		}
 		System.out.println("Sum of all Unique elements: " + sum);
 	}
 
-	public static void sumOfDistinct_HashSet(int[] arrA) {
+	public static void sumOfDistinct_HashSet(int[] input) {
 
 		// Create a HashSet of array elements, it will remove all the duplicates
 		HashSet<Integer> hashSet = new HashSet<>();
 		int sum = 0;
-		for (int i = 0; i < arrA.length; i++) {
-			if (!hashSet.contains(arrA[i])) {
-				sum += arrA[i];
-				hashSet.add(arrA[i]);
+		for (int i = 0; i < input.length; i++) {
+			if (!hashSet.contains(input[i])) {
+				sum += input[i];
+				hashSet.add(input[i]);
 			}
 		}
 		System.out.println("Sum of all Unique elements " + sum);
